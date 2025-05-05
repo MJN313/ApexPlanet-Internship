@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Webpage with HTML, CSS & JavaScript</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #c3ec52 0%, #0ba29d 100%);
+      color: #333;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #0a6655;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: rgba(255,255,255,0.9);
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    main h2 {
+      color: #0b877d;
+      margin-top: 0;
+      font-weight: 700;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .image-container {
+  position: relative;
+  margin: 15px 0;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+
+    a {
+      color: #0a6655;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover, a:focus {
+      text-decoration: underline;
+      color: #056453;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 0;
+      background-color: #0ba29d;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 12px rgba(11,162,157,0.6);
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover, button:focus {
+      background-color: #088571;
+      outline: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      font-size: 0.95rem;
+      background-color: rgba(255,255,255,0.7);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px 15px;
+      }
+      main {
+        padding: 15px 20px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      button {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to ApexPlanet</h1>
+  </header>
+
+  <main>
+    <h2>About The ApexPlanet Internship</h2>
+    <p>
+      Apex Planet is seeking enthusiastic and driven Management Interns to gain hands-on experience across various aspects of our organization's management functions. This internship offers a unique opportunity to work alongside experienced leaders, contribute to meaningful projects, and develop a comprehensive understanding of strategic planning, operational efficiency, team leadership, and organizational development within a dynamic and innovative environment.
+    </p>
+
+  
+    <div class="image-container">
+      <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg" alt="Nature Landscape" />
+      <div class="image-text">ApexPlanet</div>
+    </div>
+    
+
+    
+    <p>Check out more about Apex Planet: <a href="https://apexplanet.in">Visit ApexPlanet</a>.</p>
+
+    <button id="alert-button" type="button">Click Me!</button>
+  </main>
+
+  <footer>
+    © 2025 @JagadeswariInternship | Built with HTML, CSS, JavaScript
+  </footer>
+
+  <script>
+    const myButton = document.getElementById("alert-button");
+    myButton.addEventListener("click", function() {
+      alert("Thanks For Choosing ApexPlanet Internship");
+    });
+  </script>
+</body>
+</html>
