@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000; 
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #87ceeb; 
+      color: black;
+      padding: 1.5em 0;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .project-section {
+      background-color: #1a1a1a; 
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(255,165,0,0.3);
+      max-width: 1000px;
+      border: 2px solid #ffa500;
+    }
+    .project-content {
+      padding: 20px;
+      background-color: #2a2a2a;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .responsive-header {
+      background-color: #444;
+      color: white;
+      padding: 1em 0;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
+    }
+    .responsive-main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+      justify-content: center;
+      background-color: #333;
+      border-radius: 0 0 8px 8px;
+    }
+    .responsive-column {
+      flex: 1;
+      min-width: 280px;
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(255,165,0,0.3);
+      border: 1px solid #ffa500;
+    }
+    .carousel-wrapper-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: #222;
+      border-radius: 8px;
+    }
+    .carousel-outer-container {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      overflow: hidden;
+      border: 6px solid #ffa500;
+      box-shadow: 0 6px 15px rgba(255,165,0,0.3);
+      border-radius: 10px;
+    }
+    .carousel-inner-images {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-inner-images img {
+      min-width: 600px;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-control-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 165, 0, 0.8);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 2em;
+      border-radius: 50%;
+      z-index: 10;
+    }
+    #carousel-prev-button {
+      left: 20px;
+    }
+    #carousel-next-button {
+      right: 20px;
+    }
+    .api-display-area {
+      padding: 30px;
+      text-align: center;
+      background-color: #2e2e2e;
+      border-radius: 8px;
+    }
+    #api-joke-output {
+      min-height: 140px;
+      background-color: #1a1a1a;
+      border: 1px solid #ffa500;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+    #api-fetch-joke-button {
+      background-color: #ffa500;
+      color: black;
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.3em;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .quiz-container-wrapper {
+      padding: 30px;
+      text-align: center;
+      background-color: #1c1c1c;
+      border-radius: 8px;
+    }
+    #quiz-display {
+      background-color: #2a2a2a;
+      border: 1px solid #ffa500;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      color: white;
+    }
+    #quiz-question {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #ffa500;
+    }
+    .quiz-options label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    .quiz-options input[type="radio"] {
+      margin-right: 10px;
+    }
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 1.5em 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Integrated Web Development</h1>
+    <p>A Showcase of Responsive Design, Interactive Carousel, API Fetching, and an Interactive Quiz!</p>
+  </header>
+  <div class="project-section">
+    <h3>Responsive Web Page Demo</h3>
+    <div class="project-content">
+      <div class="responsive-header">
+        <h4>Dynamic Layout on Different Devices</h4>
+      </div>
+      <div class="responsive-main">
+        <div class="responsive-column">
+          <h5>Adaptive Content Block</h5>
+          <p>This block adjusts based on screen size. Try resizing your browser!</p>
+        </div>
+        <div class="responsive-column">
+          <h5>Mobile-First Approach</h5>
+          <p>Elements stack vertically on smaller devices for readability.</p>
+        </div>
+        <div class="responsive-column">
+          <h5>Optimized User Experience</h5>
+          <p>Built with media queries for responsiveness across all screen sizes.</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="project-section">
+    <h3>Interactive Image Carousel</h3>
+    <div class="project-content">
+      <div class="carousel-wrapper-container">
+        <div class="carousel-outer-container">
+          <div class="carousel-inner-images" id="carousel-inner-images">
+            <img src="https://picsum.photos/id/1015/600/400" alt="Mountain Landscape" class="active" />
+            <img src="https://picsum.photos/id/1016/600/400" alt="Forest Path" />
+            <img src="https://picsum.photos/id/1018/600/400" alt="River Scene" />
+            <img src="https://picsum.photos/id/1020/600/400" alt="Beach Sunset" />
+          </div>
+          <button class="carousel-control-btn" id="carousel-prev-button">&lt;</button>
+          <button class="carousel-control-btn" id="carousel-next-button">&gt;</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <div class="project-section">
+    <h3>Fetch Data from an API (Random Joke Generator)</h3>
+    <div class="project-content">
+      <div class="api-display-area">
+        <h4>Get a Random Joke!</h4>
+        <div id="api-joke-output">
+          <p id="api-joke-setup">Click the button to get a joke!</p>
+          <p id="api-joke-delivery"></p>
+        </div>
+        <button id="api-fetch-joke-button">Get New Joke</button>
+      </div>
+    </div>
+  </div>  
+  <div class="project-section">
+    <h3>Interactive Quiz</h3>
+    <div class="project-content">
+      <div class="quiz-container-wrapper">
+        <h4>Test Your Knowledge!</h4>
+        <div id="quiz-display">
+          <p id="quiz-question"></p>
+          <div class="quiz-options" id="quiz-options"></div>
+          <button id="quiz-submit-btn">Submit Answer</button>
+          <p id="quiz-result"></p>
+          <p id="quiz-score"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>2025@Jagadeswari Internship | Built with HTML, CSS, and JavaScript</p>
+  </footer>
+  <script>  
+    document.addEventListener('DOMContentLoaded', () => {
+      const carouselImages = document.getElementById('carousel-inner-images');
+      const images = carouselImages.querySelectorAll('img');
+      const prevBtn = document.getElementById('carousel-prev-button');
+      const nextBtn = document.getElementById('carousel-next-button');
+      let currentIndex = 0;
+      const totalImages = images.length;
+
+      function updateCarousel() {
+        carouselImages.style.transform = `translateX(-${currentIndex * 600}px)`;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateCarousel();
+      });
+
+      updateCarousel();
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const fetchJokeBtn = document.getElementById('api-fetch-joke-button');
+      const jokeSetup = document.getElementById('api-joke-setup');
+      const jokeDelivery = document.getElementById('api-joke-delivery');
+
+      fetchJokeBtn.addEventListener('click', async () => {
+        try {
+          const response = await fetch('https://v2.jokeapi.dev/joke/Any?type=twopart');
+          const data = await response.json();
+          jokeSetup.textContent = data.setup;
+          jokeDelivery.textContent = data.delivery;
+        } catch (error) {
+          jokeSetup.textContent = 'Failed to fetch joke.';
+          jokeDelivery.textContent = '';
+        }
+      });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      const quizQuestions = [
+        {
+          question: "Which HTML tag is used to link a JavaScript file?",
+          options: ["<script>", "<js>", "<javascript>", "<link>"],
+          answer: 0
+        },
+        {
+          question: "Which CSS property controls the text size?",
+          options: ["font-style", "font-size", "text-size", "text-style"],
+          answer: 1
+        },
+        {
+          question: "What does 'var' declare in JavaScript?",
+          options: ["A variable", "A function", "An object", "An array"],
+          answer: 0
+        }
+      ];
+
+      let currentQuestionIndex = 0;
+      let score = 0;
+
+      const quizQuestionEl = document.getElementById('quiz-question');
+      const quizOptionsEl = document.getElementById('quiz-options');
+      const quizSubmitBtn = document.getElementById('quiz-submit-btn');
+      const quizResultEl = document.getElementById('quiz-result');
+      const quizScoreEl = document.getElementById('quiz-score');
+
+      function loadQuestion() {
+        const q = quizQuestions[currentQuestionIndex];
+        quizQuestionEl.textContent = `Question ${currentQuestionIndex + 1}: ${q.question}`;
+        quizOptionsEl.innerHTML = '';
+        quizResultEl.textContent = '';
+        q.options.forEach((opt, idx) => {
+          const label = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = 'quizOption';
+          input.value = idx;
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(opt));
+          quizOptionsEl.appendChild(label);
+        });
+      }
+
+      function checkAnswer() {
+        const selected = document.querySelector('input[name="quizOption"]:checked');
+        if (!selected) {
+          quizResultEl.textContent = 'Please select an answer!';
+          return;
+        }
+        const userAnswer = parseInt(selected.value);
+        const correctAnswer = quizQuestions[currentQuestionIndex].answer;
+        if (userAnswer === correctAnswer) {
+          score++;
+          quizResultEl.textContent = 'Correct! 🎉';
+          quizResultEl.style.color = 'lightgreen';
+        } else {
+          quizResultEl.textContent = `Incorrect. The right answer is "${quizQuestions[currentQuestionIndex].options[correctAnswer]}".`;
+          quizResultEl.style.color = 'red';
+        }
+
+        quizScoreEl.textContent = `Score: ${score}/${quizQuestions.length}`;
+        quizOptionsEl.querySelectorAll('input').forEach(input => input.disabled = true);
+        quizSubmitBtn.textContent = currentQuestionIndex < quizQuestions.length - 1 ? 'Next' : 'Finish';
+
+        quizSubmitBtn.onclick = () => {
+          currentQuestionIndex++;
+          if (currentQuestionIndex < quizQuestions.length) {
+            loadQuestion();
+            quizSubmitBtn.textContent = 'Submit Answer';
+            quizSubmitBtn.onclick = checkAnswer;
+          } else {
+            quizQuestionEl.textContent = "You've completed the quiz!";
+            quizOptionsEl.innerHTML = '';
+            quizResultEl.textContent = `Final Score: ${score}/${quizQuestions.length}`;
+            quizScoreEl.textContent = '';
+            quizSubmitBtn.style.display = 'none';
+          }
+        };
+      }
+
+      quizSubmitBtn.addEventListener('click', checkAnswer);
+      loadQuestion();
+    });
+  </script>
+</body>
+</html>
