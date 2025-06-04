@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Black & White Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #000000; /* Black background */
+      color: #ffffff; /* White text */
+    }
+
+    header {
+      background: #007bff; /* Blue header background */
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 4px solid #ffcc99; /* Light orange border */
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+    }
+
+    section {
+      display: none;
+      max-width: 900px;
+      width: 100%;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #ffcc99; /* Light orange border */
+      background-color: #111;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    input, button, select {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      background-color: #222;
+      color: white;
+      border: 1px solid #ffcc99; /* Light orange border */
+      border-radius: 6px;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul li button {
+      margin-left: 1rem;
+      background: #444;
+      color: white;
+      border: 1px solid #ffcc99;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    ul li button:hover {
+      background: #666;
+    }
+
+    #productList {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    #productList div {
+      background: #222;
+      padding: 1rem;
+      border: 1px solid #ffcc99; /* Light orange border */
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-top: 2px solid #ffcc99;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    a {
+      color: #00ccff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MY PORTFOLIO</h1>
+    <nav>
+      <a onclick="showPage('about')">About Me</a>
+      <a onclick="showPage('projects')">Projects</a>
+      <a onclick="showPage('todo')">To-Do App</a>
+      <a onclick="showPage('products')">Product Page</a>
+      <a onclick="showPage('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Me -->
+    <section id="about" class="active">
+      <h2>About Me</h2>
+      <p>Hello! I'm JAGADESWARI NALLAMILLI currently pursuing Masters of Computer Applications in Aditya University. 
+        With a strong passion for web development I enjoy creating responsive, user-friendly websites using HTML, CSS, and JavaScript. I am constantly learning new technologies and frameworks to improve my skills. My goal is to become a full-stack developer and build impactful digital solutions that make life easier and more connected.</p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <ul>
+        <li>Simple Webpage using HTML, CSS, and JavaScript</li>
+        <li>Contact Form with Validation and Responsive Layout</li>
+        <li>Interactive Quiz / Image Carousel and API Data Fetching</li>
+        <li>Personal Portfolio Website</li>
+        <li>To-Do List App with Local Storage</li>
+        <li>Product Filter and Sort Page</li>
+      </ul>
+    </section>
+
+    <!-- To-Do List -->
+    <section id="todo">
+      <h2>To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Enter task" />
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+      <h2>Products</h2>
+      <select id="filterCategory">
+        <option value="">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="grocery">Grocery</option>
+        <option value="ornaments">Ornaments</option>
+        <option value="jewels">Jewels</option>
+        <option value="interior">Interior</option>
+      </select>
+
+      <select id="sortBy">
+        <option value="default">Sort by</option>
+        <option value="price">Price</option>
+        <option value="rating">Rating</option>
+      </select>
+
+      <div id="productList"></div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p><strong>Email:</strong> 
+        <a href="mailto:jagadeswari.n2002@gmail.com">jagadeswari.n2002@gmail.com</a>
+      </p>
+      <p><strong>Phone:</strong> <span>+91-9653466741</span></p>
+      <p><strong>LinkedIn:</strong> 
+        <a href="https://www.linkedin.com/in/jagadeswari-nallamilli-b615a0354" target="_blank">
+          linkedin.com/in/jagadeswari-nallamilli-b615a0354
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 @Jagadeswari Internship. All rights reserved.
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll("section").forEach(sec => {
+        sec.classList.remove("active");
+      });
+      document.getElementById(pageId).classList.add("active");
+    }
+
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+
+    function loadTasks() {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      taskList.innerHTML = "";
+      tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.textContent = task;
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.onclick = () => removeTask(index);
+        li.appendChild(removeBtn);
+        taskList.appendChild(li);
+      });
+    }
+
+    function addTask() {
+      const task = taskInput.value.trim();
+      if (task) {
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.push(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        taskInput.value = "";
+        loadTasks();
+      }
+    }
+
+    function removeTask(index) {
+      const tasks = JSON.parse(localStorage.getItem("tasks"));
+      tasks.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      loadTasks();
+    }
+
+    const products = [
+      { name: "Phone", category: "electronics", price: 30000, rating: 4.5 },
+      { name: "Laptop", category: "electronics", price: 70000, rating: 4.8 },
+      { name: "Earbuds", category: "electronics", price: 2000, rating: 4.3 },
+      { name: "Shirt", category: "fashion", price: 1200, rating: 4.0 },
+      { name: "Shoes", category: "fashion", price: 3500, rating: 4.2 },
+      { name: "Jeans", category: "fashion", price: 2000, rating: 4.1 },
+      { name: "Rice", category: "grocery", price: 80, rating: 4.5 },
+      { name: "Wheat Flour", category: "grocery", price: 60, rating: 4.3 },
+      { name: "Cooking Oil", category: "grocery", price: 150, rating: 4.6 },
+      { name: "Necklace", category: "jewels", price: 15000, rating: 4.7 },
+      { name: "Bracelet", category: "jewels", price: 5000, rating: 4.4 },
+      { name: "Ring", category: "jewels", price: 3000, rating: 4.5 },
+      { name: "Vase", category: "ornaments", price: 1200, rating: 4.1 },
+      { name: "Wall Art", category: "ornaments", price: 2500, rating: 4.3 },
+      { name: "Showpiece", category: "ornaments", price: 800, rating: 4.0 },
+      { name: "Sofa", category: "interior", price: 45000, rating: 4.6 },
+      { name: "Curtains", category: "interior", price: 3500, rating: 4.2 },
+      { name: "Lamp", category: "interior", price: 2500, rating: 4.3 },
+    ];
+
+    const filterCategory = document.getElementById("filterCategory");
+    const sortBy = document.getElementById("sortBy");
+    const productList = document.getElementById("productList");
+
+    function displayProducts(data) {
+      productList.innerHTML = data.map(p => `
+        <div>
+          <h3>${p.name}</h3>
+          <p>Category: ${p.category}</p>
+          <p>Price: ₹${p.price}</p>
+          <p>Rating: ${p.rating}</p>
+        </div>
+      `).join("");
+    }
+
+    function applyFilters() {
+      let filtered = [...products];
+      const category = filterCategory.value;
+      const sort = sortBy.value;
+
+      if (category) {
+        filtered = filtered.filter(p => p.category === category);
+      }
+
+      if (sort === "price") {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sort === "rating") {
+        filtered.sort((a, b) => b.rating - a.rating);
+      }
+
+      displayProducts(filtered);
+    }
+
+    filterCategory.onchange = applyFilters;
+    sortBy.onchange = applyFilters;
+
+    window.onload = function () {
+      loadTasks();
+      displayProducts(products);
+    };
+  </script>
+</body>
+</html>
